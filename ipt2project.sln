@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipt2project", "ipt2project\ipt2project.csproj", "{94DDCAF5-8037-4389-8299-5C741966AD98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94DDCAF5-8037-4389-8299-5C741966AD98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94DDCAF5-8037-4389-8299-5C741966AD98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94DDCAF5-8037-4389-8299-5C741966AD98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94DDCAF5-8037-4389-8299-5C741966AD98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04F0E78A-25DE-4219-A17C-31D97FA8499E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ipt2project.Models.Products>
+
+@{
+    ViewBag.Title = "ViewProduct";
+}
+
+<div class="card" style="padding:10px;">
+    <div class="card-header">
+        <h3>Products</h3>
+        <a href="Create" onclick="addUser" class="btn btn-sm btn-success float-right" id="addUser" data-toggle="modal" data-target="#bigModal">
+            <i class="fa fa-plus"></i>
+            Add Product
+        </a>
+    </div>
+    <table class="table table-striped" id="productsTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.product_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.product_type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.price)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.product_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.product_type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.price)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditProduct", new { id = item.product_id }) |
+                        @Html.ActionLink("Delete", "DeleteProduct", new { id = item.product_id })
+                    </td>
+                </tr>
+            </tbody>
+        }
+
+    </table>
+</div>
+<div class="modal fade" id="bigModal" tabindex="-1" role="dialog" aria-labelledby="bigModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bigModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="bigModalBody">
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelBig">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+</div>

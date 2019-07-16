@@ -20,6 +20,7 @@ namespace ipt2project.Models
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<History> Historys { get; set; }
-        
+        public DbSet<Products> Product { get; set; }
+
     }
 }

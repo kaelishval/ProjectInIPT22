@@ -37,6 +37,8 @@ namespace ipt2project.Controllers
             {
                 using (DataContext db = new DataContext())
                 {
+                    
+                    ord.Date_ordered = DateTime.Now;
                     db.Orders.Add(ord);
                     db.SaveChanges();
                 }
@@ -67,7 +69,17 @@ namespace ipt2project.Controllers
             }
 
         }
-
+        public ActionResult ViewAllHistory()
+        {
+            return View(GetAllHistory());
+        }
+        IEnumerable<History> GetAllHistory()
+        {
+            using (DataContext db = new DataContext())
+            {
+                return db.Historys.ToList<History>();
+            }
+        }
 
         public ActionResult Delivered(int id)
         {
@@ -75,9 +87,19 @@ namespace ipt2project.Controllers
             {
                 using (DataContext db = new DataContext())
                 {
+                    History his = new History();
+
                     Order ord = db.Orders.Find(id);
-                    History hist = db.Historys.Find(id);
-                    History.id=Order.id;
+                    //db.Orders.Add(ord);
+                    his.HistoryId = ord.Id;
+                    his.OrderDetails = ord.OrderDetails;
+                    his.OrderName = ord.OrderName;
+                    his.Price = ord.Price;
+                    his.Status = "Delivered";
+                    his.Date_ordered = ord.Date_ordered;
+                    his.Date_delivered = DateTime.Now;
+                    db.Historys.Add(his);
+                    db.Orders.Remove(ord);
                     db.SaveChanges();
 
                    

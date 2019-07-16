@@ -7,11 +7,13 @@ namespace ipt2project.Models
 {
     public class Order
     {
-        internal static object id;
+        //internal static object id;
 
         public int Id { get; set; }
         public string OrderName { get; set; }
         public string OrderDetails { get; set; }
         public string Price { get;set;  }
+        public DateTime Date_ordered { get; set; }
+
     }
 }

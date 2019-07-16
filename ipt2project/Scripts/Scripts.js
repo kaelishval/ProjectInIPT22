@@ -77,3 +77,6 @@ function Delivered(url) {
 
     }
 }
+$(document).ready(function () {
+    $("#productsTable").DataTable();
+})
